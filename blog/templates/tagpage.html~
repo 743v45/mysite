@@ -1,0 +1,6 @@
+{% extends "sub_html/templet.html" %}
+
+		{%block nav %} {% include "sub_html/nav.html" %}{% endblock %}
+		{%block head %}{% include "sub_html/head.html" %}{% endblock %}
+		{%block content %}{%  include  "sub_html/tag_main.html" %}{% endblock %}
+		{%block footer %}{%  include "sub_html/foot.html" %}{% endblock %}

@@ -1,0 +1,21 @@
+<main id="post-page" class="container" role="main">
+    <div class="row">
+        <div class="col-md-10 col-md-push-1">
+        
+            <article class="panel post tag-promise tag-javascript">
+                    <header class="panel-heading post-header">
+                        <h1 class="post-title">
+                            <a href="/promises-the-trust-problem-part-3/"><span>{{blog.title}}</span></a>
+                        </h1>
+                    </header>
+
+                    <section class="panel-body post-content">
+                       {{blog.content}}
+                       <hr />
+                       <p>发表于:{{blog.publish_time|date:"F,j,Y"}}, 更新于:{{blog.update_time|date:"F,j,Y"}}, By {{blog.author}}</p>
+                    </section>
+
+            </article>
+        </div>
+    </div>
+</main>

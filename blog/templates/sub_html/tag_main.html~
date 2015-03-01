@@ -1,0 +1,64 @@
+<main class="container" role="main">
+    <div class="row">
+        <div class="col-sm-8 col-sm-push-1">
+        <!-- content 主要内容  -->
+        {% for blog in blog_list %}
+            <article class="panel post tag-ghost-post tag-xin-ban-ben-fa-bu" data-scroll-reveal="enter bottom"> 
+                <header class="panel-heading post-header">
+                    <h2 class="post-title">
+                        <a href="/blog/{{blog.id}}/">{{blog.title}}</a>
+                    </h2>
+                </header>
+                
+                <section class="panel-footer post-meta">
+                    <div class="post-tags">
+                            <i class="fa fa-tags"></i>
+                            {% for tag in blog.tags.all %}
+                            <a href="/tag/{{ tag.id }}/">{{ tag }}</a> 
+                            {% endfor %}
+                    </div>
+                </section>
+            </article>
+            {% endfor %}
+            
+        </div>
+        <div class="col-sm-2 col-sm-push-1">
+            <div class="list-group tag-sidebar">
+            	{% for tag in tag_list %}
+           				<a href="/tag/{{tag.id}}" class="tag-item">{{ tag.content }}<span class="post-count">{{tag.blog_set.all|length}}</span></a>
+           		{% endfor %}
+           		
+            </div>
+        </div>
+    </div>
+
+    <nav class="page-pagination">
+	<ul class="pagination">
+
+		{% if not last_page %}
+	    <li class="disabled">
+	    	<span class="newer-posts"><i class="fa fa-angle-left"></i></span>
+    	</li>
+	    {% else %}
+	    <li>
+	    	<a class="newer-posts" href="/tag/{{tag_id}}/{{last_page}}"><i class="fa fa-angle-left"></i></a>
+	    </li>
+	    {% endif %}
+
+	    <li>
+	   	<span class="page-number">{{ page_num }} /{{ all_page_num }}</span>
+	   	</li>
+	   	
+		{% if not next_page %}
+	    <li class="disabled">
+	    	<span class="newer-posts"><i class="fa fa-angle-right"></i></span>
+    	</li>
+	    {% else %}
+	    <li>
+	    	<a class="newer-posts" href="/tag/{{ tag_id }}/{{ next_page }}/"><i class="fa fa-angle-right"></i></a>
+	    </li>
+	    {% endif %}
+	    
+	</ul>
+</nav>
+</main>

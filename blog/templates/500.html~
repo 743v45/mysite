@@ -1,0 +1,5 @@
+{% extends "sub_html/templet.html" %}
+
+{%block nav %} {% include "sub_html/nav.html" %}{% endblock %}
+			{%block content %} <p>500 error</p> {% endblock %}
+{%block footer %}{%  include "sub_html/foot.html" %}{% endblock %}
